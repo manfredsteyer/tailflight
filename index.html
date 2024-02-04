@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Layout mit Tailwind CSS und Hamburger-Menü</title>
+    <link href="styles.css" rel="stylesheet">
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const toggleButton = document.getElementById('hamburgerBtn');
+            const sidebar = document.getElementById('sidebar');
+
+            toggleButton.addEventListener('click', function () {
+                sidebar.classList.toggle('hidden');
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <div class="flex h-screen">
+        <!-- Seitliche Navigationsleiste -->
+        <div id="sidebar" class="w-64 bg-gray-100 text-gray-800 flex-none hidden xl:block">
+            <div class="p-5">Logo</div>
+            <ul>
+                <li class="p-3 hover:bg-gray-200">Link 1</li>
+                <li class="p-3 hover:bg-gray-200">Link 2</li>
+                <li class="p-3 hover:bg-gray-200">Link 3</li>
+            </ul>
+        </div>
+
+        <!-- Hauptbereich -->
+        <div class="flex-1 flex flex-col">
+            <!-- Obere Navigationsleiste mit Hamburger-Icon -->
+            <div class="bg-sky-500 text-white p-4 shadow-md z-10 flex">
+                <button id="hamburgerBtn" aria-label="Open menu" class="xl:hidden mr-3 pt-1">
+                    <span class="block w-6 h-px bg-white mb-1"></span>
+                    <span class="block w-6 h-px bg-white mb-1"></span>
+                    <span class="block w-6 h-px bg-white mb-1"></span>
+                </button>
+                <div>
+                    Obere Navigationsleiste
+                </div>
+            </div>
+
+            <!-- Suchformular -->
+            <div class="p-4 bg-white shadow-md">
+                <form class="flex flex-col gap-4">
+                    <div>
+                        <label for="search1" class="block text-sm font-medium text-gray-700">Suchbegriff 1</label>
+                        <input type="text" id="search1" name="search1"
+                            class="mt-1 block w-full p-2 border border-gray-300 rounded"
+                            placeholder="Gib den ersten Suchbegriff ein">
+                    </div>
+                    <div>
+                        <label for="search2" class="block text-sm font-medium text-gray-700">Suchbegriff 2</label>
+                        <input type="text" id="search2" name="search2"
+                            class="mt-1 block w-full p-2 border border-gray-300 rounded"
+                            placeholder="Gib den zweiten Suchbegriff ein">
+                    </div>
+                    <!-- Button nur so breit wie nötig -->
+                    <button type="submit"
+                        class="px-4 py-2 bg-sky-500 text-white rounded hover:bg-sky-600 self-start">Suchen</button>
+                </form>
+            </div>
+
+            <!-- Inhalt / Karten -->
+            <div class="p-4 pt-10 flex-1 overflow-y-auto">
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4">
+                    <!-- Karte 1 -->
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <h2 class="font-bold mb-2">Karte 1</h2>
+                        <p>Informationen...</p>
+                    </div>
+                
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <h2 class="font-bold mb-2">Karte 1</h2>
+                        <p>Informationen...</p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <h2 class="font-bold mb-2">Karte 1</h2>
+                        <p>Informationen...</p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <h2 class="font-bold mb-2">Karte 1</h2>
+                        <p>Informationen...</p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <h2 class="font-bold mb-2">Karte 1</h2>
+                        <p>Informationen...</p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <h2 class="font-bold mb-2">Karte 1</h2>
+                        <p>Informationen...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

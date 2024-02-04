@@ -1,0 +1,19 @@
+{
+  "name": "tail",
+  "version": "1.0.0",
+  "description": "",
+  "main": "tailwind.config.js",
+  "scripts": {
+    "tailwind": "tailwindcss -i ./input.css -o ./styles.css --watch",
+    "serve": "serve",
+    "start": "concurrently \"npm run tailwind\" \"npm run serve\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "serve": "^14.2.1",
+    "tailwind": "^4.0.0"
+  }
+}
